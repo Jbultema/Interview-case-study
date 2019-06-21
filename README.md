@@ -29,13 +29,15 @@ The Roc curve shows that it wasn't necessarily a bad model, just not amazing.
 
 Performance of Logistic Regression (Alyse):
 
-The result of the Logistic Regression was not great when performed with all of our cleaned features except for the interview date, but it did seem to be competive against some of the other model initial runs. The accuracy score was 71.5, the recall was 98.5, and the F1 score was 81.7. 
-Below is the ROC curve for the initial Logistic Regression:
+While result of the Logistic Regression was not great when performed with all of our cleaned features except for the interview date, it did seem to be competive against some of the other model initial runs. The accuracy score was 71.5, the recall was 98.5, and the F1 score was 81.7. 
+Below is the ROC curve for the initial Logistic Regression model:
+
 ![Logistic ROC curve 1](imgs/logistic_roc_1.png)
 
-I ran sklearn's Recursive Feature Estimation to try an identify some of the top features to use in the model. While the accuracy imporved slightly to 72.8, the recall lowered significantly to 82.7.
+I ran sklearn's Recursive Feature Estimation to try and identify some of the top features to use in the model. While the accuracy imporved slightly to 72.8, the recall lowered significantly to 82.7, and the F1 to 79.9.
 
 Below is the ROC curve for the Logistic Regression only using a subset of feautures identified through Recursive Feature Estimation:
+
 ![Logistic ROC curve 2](imgs/logistic_roc_2.png)
 
 
