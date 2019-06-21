@@ -18,7 +18,7 @@ Performance of Random Forest (Andrew):
 
 Best Accuracy: 72%
 
-(imgs/Random_Forest.png)
+![Random Forest](imgs/Random_Forest.png)
 
 Performance of XGBoost Classifier (Kyle):
 Creating a model with XGBoost was a fairly simple matter, with a maximum of 71%. Unfortunately, changing meta-parameters and feature selection only barely made a mark on the resulting accuracy, as it seems that the models default parameters were optimal, at least for this data set. I printed out a feature importance plot to spot any catagoricals that were relatively low, and was pretty useless.
