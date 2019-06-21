@@ -18,6 +18,8 @@ Performance of Random Forest (Andrew):
 
 Best Accuracy: 72%
 
+Approach: took top 30 feature importance.
+
 ![Random Forest](imgs/Random_Forest.png)
 
 Performance of XGBoost Classifier (Kyle):
