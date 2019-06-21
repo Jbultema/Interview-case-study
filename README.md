@@ -21,6 +21,7 @@ Performance of Random Forest (Andrew):
 
 
 Performance of XGBoost Classifier (Kyle):
+![Feature Importance Plot](imgs/feature_importance.png)
 
 
 Performance of Logistic Regression (Alyse):
