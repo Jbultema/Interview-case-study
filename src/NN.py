@@ -17,8 +17,8 @@ import pandas as pd
 def create_baseline():
 # create model
     model = Sequential()
-    model.add(Dense(60, input_dim=155, kernel_initializer='normal', activation='relu'))
-    model.add(Dense(30, input_dim=60, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(30, input_dim=175, kernel_initializer='normal', activation='linear'))
+    #model.add(Dense(30, input_dim=60, kernel_initializer='normal', activation='relu'))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     df.drop(['Unnamed: 0'], axis= 1, inplace= True)
 
     # create the columns to use in models
-    exclude_cols = ['expected_attendance_no','expected_attendance_yes', 'actual_attendance_yes']
+    exclude_cols = ['expected_attendance_no','expected_attendance_yes', 'actual_attendance_yes', 'interview_date']
     include_cols = [x for x in df.columns.tolist() if x not in exclude_cols]
     y = df['actual_attendance_yes'].values
     X = df[include_cols].values
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     np.random.seed(seed)
 
     # evaluate model with standardized dataset
-    estimator = KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=50, verbose=1)
+    estimator = KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=1)
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
     results = cross_val_score(estimator, X_train[:,:-1], y_train, cv=kfold)
     y_predicted = model.predict(X_test)
