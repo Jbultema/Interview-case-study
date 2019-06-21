@@ -12,16 +12,13 @@ Each column allowed for free-entry of values, which resulted in a large amount o
 
 We decided to split our efforts on different modeling approaches, including: Random Forest Classifiers, XGBoost Classifier, Logistic Regression, and Neural Networks.
 
-Information about models...
-
-
 # Model Performance
 
 Performance of Random Forest (Andrew):
 
 
 Performance of XGBoost Classifier (Kyle):
-Creating a model with XGBoost was a fairly simple matter. Unfortunately, changing meta-parameters and feature selection only barely made a mark on the resulting accuracy, as it seems that the models default parameters were optimal, at least for this data set. I printed out a feature importance plot to spot any catagoricals that were relatively low, and was pretty useless.
+Creating a model with XGBoost was a fairly simple matter, with a maximum of 71%. Unfortunately, changing meta-parameters and feature selection only barely made a mark on the resulting accuracy, as it seems that the models default parameters were optimal, at least for this data set. I printed out a feature importance plot to spot any catagoricals that were relatively low, and was pretty useless.
 ![Feature Importance Plot](imgs/feature_importance.png)
 The Roc curve shows that it wasn't necessarily a bad model, just not amazing.
 ![Roc curve](imgs/xgboost_roc.png)
@@ -42,7 +39,7 @@ Below is the ROC curve for the Logistic Regression only using a subset of feautu
 
 
 Performance of Neural Network (Jarred):
-
+Best accuracy: 73.46%
 
 # Results and Conclusions
 
