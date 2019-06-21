@@ -27,7 +27,7 @@ Performance of XGBoost Classifier (Kyle):
 Performance of Logistic Regression (Alyse):
 The result of the Logistic Regression was not great when performed with all of our cleaned features except for the interview date, but it did seem to be competive against some of the other model initial runs. The accuracy score was 71.5, the recall was 98.5, and the F1 score was 81.7. 
 Below is the ROC curve for the initial Logistic Regression:
-![Logistic ROC curve 1](log_roc_1.png)
+![Logistic ROC curve 1](logistic_roc_1.png)
 
 
 
