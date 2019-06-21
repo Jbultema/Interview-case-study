@@ -16,7 +16,7 @@ We decided to split our efforts on different modeling approaches, including: Ran
 
 Performance of Random Forest (Andrew):
 
-Best Accuracy: 72%
+Best Accuracy: ~70%
 
 Approach: took top 30 feature importance.
 
