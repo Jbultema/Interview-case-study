@@ -21,7 +21,10 @@ Performance of Random Forest (Andrew):
 
 
 Performance of XGBoost Classifier (Kyle):
+Creating a model with XGBoost was a fairly simple matter. Unfortunately, changing meta-parameters and feature selection only barely made a mark on the resulting accuracy, as it seems that the models default parameters were optimal, at least for this data set. I printed out a feature importance plot to spot any catagoricals that were relatively low, and was pretty useless.
 ![Feature Importance Plot](imgs/feature_importance.png)
+The Roc curve shows that it wasn't necessarily a bad model, just not amazing.
+![Roc curve](imgs/xgboost_roc.png)
 
 
 Performance of Logistic Regression (Alyse):
