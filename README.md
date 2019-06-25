@@ -12,23 +12,39 @@ Each column allowed for free-entry of values, which resulted in a large amount o
 
 We decided to split our efforts on different modeling approaches, including: Random Forest Classifiers, XGBoost Classifier, Logistic Regression, and Neural Networks.
 
-Information about models...
-
-
 # Model Performance
 
 Performance of Random Forest (Andrew):
 
+Best Accuracy: ~70%
+
+Approach: took top 30 feature importance.
+
+![Random Forest](imgs/Random_Forest.png)
 
 Performance of XGBoost Classifier (Kyle):
+Creating a model with XGBoost was a fairly simple matter, with a maximum of 71%. Unfortunately, changing meta-parameters and feature selection only barely made a mark on the resulting accuracy, as it seems that the models default parameters were optimal, at least for this data set. I printed out a feature importance plot to spot any catagoricals that were relatively low, and was pretty useless.
+![Feature Importance Plot](imgs/feature_importance.png)
+The Roc curve shows that it wasn't necessarily a bad model, just not amazing.
+![Roc curve](imgs/xgboost_roc.png)
 
 
 Performance of Logistic Regression (Alyse):
 
+While result of the Logistic Regression was not great when performed with all of our cleaned features except for the interview date, it did seem to be competive against some of the other model initial runs. The accuracy score was 71.5, the recall was 98.5, and the F1 score was 81.7. 
+Below is the ROC curve for the initial Logistic Regression model:
+
+![Logistic ROC curve 1](imgs/logistic_roc_1.png)
+
+I ran sklearn's Recursive Feature Estimation to try and identify some of the top features to use in the model. While the accuracy imporved slightly to 72.8, the recall lowered significantly to 82.7, and the F1 to 79.9.
+
+Below is the ROC curve for the Logistic Regression only using a subset of feautures identified through Recursive Feature Estimation:
+
+![Logistic ROC curve 2](imgs/logistic_roc_2.png)
 
 
 Performance of Neural Network (Jarred):
-
+Best accuracy: 73.46%
 
 # Results and Conclusions
 
