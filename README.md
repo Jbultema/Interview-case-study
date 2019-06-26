@@ -33,11 +33,13 @@ Our group decided to split our efforts on different modeling approaches, includi
 #### Performance of Random Forest:
 Creating a Random Forest model is fairly straight-forward with minimal hyperparameter tuning required. Given the time contraints, this was the best Random Forest model produced.
 Approach: use top 30 feature importance for modeling.
+
 **Best Accuracy: ~70%**
 
 
 #### Performance of XGBoost Classifier:
 Creating a model with XGBoost was a fairly simple matter, but hyper-parameters tuning and feature selection had minimal impact on accuracy, as it seems that the models default parameters were optimal. Feature importance plot to spot any catagoricals that were relatively low, and was not of much value.
+
 **Best Accuracy: 71%**
 
 ![Feature Importance Plot](imgs/feature_importance.png)
@@ -50,6 +52,7 @@ The Roc curve shows that it wasn't necessarily a bad model, but did not perform 
 
 #### Performance of Logistic Regression:
 A LASSO Logistic Regression was used to reduce the feature set. 
+
 **Best accuracy: 73**
 
 Below is the ROC curve for the initial Logistic Regression model:
@@ -65,7 +68,7 @@ Below is the ROC curve for the Logistic Regression only using a subset of feautu
 #### Performance of Neural Network:
 Research on appropriate Neural Network architecture for this type of project suggested a simple two approach with only two layers. Hyper-parameter tuning yielded some improvement in model performance, but more advanced structures did not improve model peformance.
 
-**Best accuracy: 74%
+**Best accuracy: 74%**
 
 # Results and Conclusions
 The performance of all models was very similar, but not strong in any case. Given the poor overall performance, a model that provides some interpretability (either parametrics or non-parametric) is preferable. However, given the relatively low accuracy of each model, the predictions on feature importance are not given with a high degree of confidence. 
