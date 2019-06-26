@@ -6,6 +6,9 @@ def read_data(file):
     return df
 
 def column_cleaner(df):
+    """
+    Drop and rename columns for this data set.
+    """
     df.drop(['Unnamed: 23','Unnamed: 24','Unnamed: 25','Unnamed: 26','Unnamed: 27'],axis=1,inplace=True)
     df.columns = ['interview_date','client_name', 'industry', 'location',
        'interview_position', 'skillset', 'interview_type', 'name', 'gender',
@@ -18,6 +21,9 @@ def column_cleaner(df):
 
 
 def date_converter(df):
+    """
+    Time-date conversion for specific column in data.
+    """
     df['interview_date'].replace(['25 – Apr-16'],'25.04.2016',inplace=True)
     df['interview_date'] = df['interview_date'].str[:10]
     df['interview_date'] = pd.to_datetime(df['interview_date'])
@@ -28,7 +34,10 @@ def fillnas(df):
     return df
 
 
-def lower_all_data(df):
+def lower_all_data(df, col_list= columns):
+    """
+    Convert specified columns to lower-case string.
+    """
     columns = ['client_name', 'industry', 'location',
        'interview_position', 'skillset', 'interview_type', 'name', 'gender',
        'candidate_current_location', 'candidate_job_location',
@@ -37,7 +46,7 @@ def lower_all_data(df):
        'printed_resume_read_jd', 'can_find_interview', 'call_letter_shared',
        'expected_attendance', 'actual_attendance', 'marital_status']
 
-    for ind_col in columns: 
+    for ind_col in col_list: 
         df[ind_col] = df[ind_col].apply(lambda x: str(x).lower())
     return df
 
@@ -93,6 +102,8 @@ def dummy_data(df):
     return new_df
 
 if __name__ == '__main__':
+    
+    # data cleaning pipeline
     file = '../data/Interview.csv'
     df = read_data(file)
     df = column_cleaner(df)
@@ -101,3 +112,6 @@ if __name__ == '__main__':
     df = lower_all_data(df)
     df = clean_data_values(df)
     new_df = dummy_data(df)
+    
+    # save the cleaned data for use in modeling
+    new_df.to_excel("../data/cleaned_interview_data.xls")

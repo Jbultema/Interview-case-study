@@ -17,7 +17,7 @@ import pandas as pd
 def create_baseline():
 # create model
     model = Sequential()
-    model.add(Dense(30, input_dim=175, kernel_initializer='normal', activation='linear'))
+    model.add(Dense(30, input_dim=155, kernel_initializer='normal', activation='linear'))
     #model.add(Dense(30, input_dim=60, kernel_initializer='normal', activation='relu'))
     model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
     # Compile model
@@ -27,6 +27,7 @@ def create_baseline():
 
 if __name__ == "__main__":
 
+    # import the cleaned data
     df = pd.read_excel("data/cleaned_interview_data.xls")
     df.drop(['Unnamed: 0'], axis= 1, inplace= True)
 
